@@ -1,0 +1,21 @@
+#! /usr/bin/env ruby -w
+
+#
+# NOTE: This is outside of rails and bundler
+#
+# Example:
+#
+#   bin/import_events events.csv
+
+require "csv"
+require "time"
+
+FILENAME = ARGV.shift or raise "Usage: #{$0} CSV_FILE"
+
+DATABASE_URL = ENV.fetch("DATABASE_URL", "postgres://localhost/ensql_dx_development")
+
+events = CSV.read(FILENAME, headers: true, converters: [->(v) { Time.parse(v) rescue v }]).map(&:to_h)
+pp events
+
+
+# puts "Imported #{count} events."

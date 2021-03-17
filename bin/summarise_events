@@ -1,0 +1,20 @@
+#! /usr/bin/env ruby -w
+
+#
+# NOTE: This is outside of rails and bundler
+#
+# Example:
+#
+#   bin/summarise_events user1@example.com
+#   bin/summarise_events user2@example.com
+
+EMAIL = ARGV.shift or raise "Usage: #{$0} EMAIL"
+DATABASE_URL = ENV.fetch("DATABASE_URL", "postgres://localhost/ensql_dx_development")
+
+# TODO: These are not the results
+results = []
+
+
+
+
+pp results
