@@ -30,7 +30,7 @@ ORDER BY
 1. Update the /events/rollup endpoint (in the EventsController) to return the
    results of the query, e.g. `[{ "occurred_at": "2021-03-01", "count": 48 }, …]`.
 2. Allow the month to be changed by `?month=2021-02-01`
-3. Allow the count to be filtered by `?event_type=commented,purchased`.
+3. Allow the count to be filtered by `?event_types=commented,purchased`.
 4. Allow the sort direction to be changed by `?sort=asc` or `?sort=desc`.
 
 ## Task 2
